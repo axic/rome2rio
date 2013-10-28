@@ -8,6 +8,7 @@ Gem::Specification.new do |gem|
   gem.description = "A Ruby wrapper for the Rome2rio API. See http://www.rome2rio.com/documentation/search for the official documentation."
   gem.summary = "A Ruby wrapper for the Rome2rio API."
   gem.homepage = "http://github.com/axic/rome2rio"
+  gem.license = "MIT"
 
   gem.add_dependency 'faraday'
   gem.add_dependency 'multi_json'
