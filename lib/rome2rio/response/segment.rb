@@ -5,7 +5,7 @@ module Rome2rio
     def initialize(json)
       # Possible kinds: walk, car, train, bus, ferry, flight
       @kind = json["kind"]
-      @isMajor = json["isMajor"]
+      @isMajor = json["isMajor"] == 1
       @distance = json["distance"]
       @duration = json["duration"]
       @indicativePrice = IndicativePrice.new(json["indicativePrice"])
