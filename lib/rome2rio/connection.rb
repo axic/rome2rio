@@ -2,7 +2,7 @@ module Rome2rio
   class Connection
     def initialize(opts = {})
       @apikey = opts[:apikey]
-      @endpoint = opts[:endpoint] || "http://evaluate.rome2rio.com"
+      @endpoint = opts[:endpoint] || "http://free.rome2rio.com"
     end
 
     def handle_response(response)
