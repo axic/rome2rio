@@ -1,7 +1,7 @@
 module Rome2rio
   class Segment
     attr_reader :kind, :isMajor, :distance, :duration, :indicativePrice, :isImperial,
-    :sName, :sPos, :sCode, :tName, :tPos, :tCode, :path, :itineraries
+    :sName, :sPos, :sCode, :tName, :tPos, :tCode, :path, :itineraries, :subkind
     def initialize(json)
       # Possible kinds: walk, car, train, bus, ferry, flight
       @kind = json["kind"]
@@ -25,6 +25,7 @@ module Rome2rio
       end
 
       if [ "train", "bus", "ferry" ].include?(@kind) then
+        @subkind = json["subkind"]
         @itineraries = []
         json["itineraries"].each { |itinerary| @itineraries << TransitItinerary.new(itinerary) }
       end
