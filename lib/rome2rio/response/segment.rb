@@ -11,7 +11,7 @@ module Rome2rio
       @indicativePrice = IndicativePrice.new(json["indicativePrice"])
 
       if @kind != "flight" then
-        @isImperial = json["isImperial"]
+        @isImperial = json["isImperial"] == 1
         @sName = json["sName"]
         @sPos = Position.parse(json["sPos"])
         @tName = json["tName"]
