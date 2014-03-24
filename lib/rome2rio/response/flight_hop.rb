@@ -1,15 +1,19 @@
 module Rome2rio
   class FlightHop
-    attr_reader :sCode, :tCode, :sTime, :tTime, :airline, :flight,
-    :duration, :dayChange, :lDuration, :lDayChange
+    attr_reader :sCode, :tCode, :sTerminal, :tTerminal,
+    :sTime, :tTime, :airline, :flight, :duration,
+    :aircraft, :dayChange, :lDuration, :lDayChange
     def initialize(json)
       @sCode = json["sCode"]
       @tCode = json["tCode"]
+      @sTerminal = json["sTerminal"]
+      @tTerminal = json["tTerminal"]
       @sTime = json["sTime"]
       @tTime = json["tTime"]
       @airline = json["airline"]
       @flight = json["flight"]
       @duration = json["duration"]
+      @aircraft = json["aircraft"]
       @dayChange = json["dayChange"] if json["dayChange"]
       @lDuration = json["lDuration"] if json["lDuration"]
       @lDayChange = json["lDayChange"] if json["lDayChange"]
