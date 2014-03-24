@@ -1,6 +1,6 @@
 module Rome2rio
   class SearchResponse
-    attr_reader :agencies, :airlines, :airports, :routes, :verbatim, :data
+    attr_reader :agencies, :airlines, :airports, :aircrafts, :routes, :verbatim, :data
     def initialize(json)
       @verbatim = json
 
@@ -9,6 +9,9 @@ module Rome2rio
 
       @airlines = []
       json["airlines"].each { |airline| @airlines << Airline.new(airline) }
+
+      @aircrafts = []
+      json["aircrafts"].each { |aircraft| @aircrafts << Aircraft.new(aircraft) }
 
       @airports = []
       json["airports"].each { |airport| @airports << Airport.new(airport) }
