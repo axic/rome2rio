@@ -14,7 +14,7 @@ gem install rome2rio
 Usage
 -----
 
-```
+```ruby
 require 'rome2rio'
 results = Rome2rio::Connection.new.search(search options)
 puts results.routes[0].duration
@@ -28,7 +28,7 @@ Complex datatypes (such as Position, Size, Offset, DayFlags) will be parsed.
 
 Using Position for input:
 
-```
+```ruby
 Rome2rio::Connection.new.search({:oPos => Rome2rio::Position.new(41.79443,12.25108), :dPos => Rome2rio::Position.new(-22.81215,-43.24721)})
 ```
 
