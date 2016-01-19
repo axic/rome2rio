@@ -18,8 +18,10 @@ module Rome2rio
       @dayChange = json["dayChange"] if json["dayChange"]
       @lDuration = json["lDuration"] if json["lDuration"]
       @lDayChange = json["lDayChange"] if json["lDayChange"]
-      @codeshares = []
-      json["codeshares"].each { |codeshare| @codeshares << Codeshare.new(codeshare) }
+      if json["codeshares"] then
+        @codeshares = []
+        json["codeshares"].each { |codeshare| @codeshares << Codeshare.new(codeshare) }
+      end
     end
   end
 end
